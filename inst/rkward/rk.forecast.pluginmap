@@ -23,7 +23,7 @@
 		name="rk.forecast"
 		shortinfo="Business Forecasting: Exponential Smoothing, Holt-Winters, and Accuracy Metrics"
 		longinfo="Business Forecasting: Exponential Smoothing, Holt-Winters, and Accuracy Metrics"
-		version="0.0.1"
+		version="0.0.2"
 		releasedate="2026-10-27"
 		url="https://github.com/AlfCano/rk.forecast"
 		license="GPL (&gt;= 3)"
@@ -70,8 +70,8 @@
 			label="Analysis"
 		>
 			<menu
-				id="TimeSeries"
-				label="Time Series"
+				id="time_series"
+				label="time_series"
 			>
 				<entry
 					component="cmp_ExpnntlSmthngHltWntrsBMNM"
@@ -83,8 +83,8 @@
 			label="Analysis"
 		>
 			<menu
-				id="TimeSeries"
-				label="Time Series"
+				id="time_series"
+				label="time_series"
 			>
 				<entry
 					component="cmp_ExpnntlSmthngHWEAMAPERMSE"
@@ -96,8 +96,8 @@
 			label="Analysis"
 		>
 			<menu
-				id="TimeSeries"
-				label="Time Series"
+				id="time_series"
+				label="time_series"
 			>
 				<entry
 					component="cmp_ExpnntlSmthngHltWntrsESHW"

@@ -2,7 +2,7 @@ Package: rk.forecast
 Type: Package
 Title: Business Forecasting: Exponential Smoothing, Holt-Winters, and
         Accuracy Metrics
-Version: 0.0.1
+Version: 0.0.2
 Date: 2026-10-27
 Author: Alfonso Cano
 Maintainer: Alfonso Cano <alfonso.cano@correo.buap.mx>

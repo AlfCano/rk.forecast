@@ -16,7 +16,7 @@ local({
     ),
     about = list(
       desc = "Business Forecasting: Exponential Smoothing, Holt-Winters, and Accuracy Metrics",
-      version = "0.0.1",
+      version = "0.0.2",
       url = "https://github.com/AlfCano/rk.forecast",
       license = "GPL (>= 3)"
     )
@@ -27,8 +27,8 @@ local({
     package = list(c(name = "forecast"))
   )
 
-  # Menu hierarchy: Analysis -> Time Series
-  h_forecast <- list("analysis", "Time Series")
+  # Menu hierarchy: Analysis -> time_series
+  h_forecast <- list("analysis", "time_series")
 
   # Global JavaScript Helper Functions
   js_helpers <- "
