@@ -1,0 +1,71 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_DtStrctr" />
+		<setting id="ts_data">
+		</setting>
+		<setting id="ts_target">
+		</setting>
+		<caption id="frm_structure" />
+		<setting id="ts_freq">
+		</setting>
+		<setting id="ts_start_yr">
+		</setting>
+		<setting id="ts_start_pd">
+		</setting>
+		<caption id="tab_MdlSlctn" />
+		<caption id="frm_model" />
+		<setting id="ts_model">
+		</setting>
+		<setting id="ts_horizon">
+		</setting>
+		<caption id="tab_PltOptns" />
+		<caption id="frm_plot" />
+		<setting id="ts_theme">
+		</setting>
+		<setting id="plot_main">
+		</setting>
+		<setting id="plot_xlab">
+		</setting>
+		<setting id="plot_ylab">
+		</setting>
+		<caption id="tab_Output" />
+		<caption id="frm_SvFrcstW" />
+		<setting id="ts_save">
+		</setting>
+		<caption id="frm_graph_size" />
+		<setting id="plot_w">
+		</setting>
+		<setting id="plot_h">
+		</setting>
+		<setting id="plot_res">
+		</setting>
+		<caption id="frm_save_plot" />
+		<setting id="plot_save">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>

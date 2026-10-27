@@ -1,0 +1,93 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="ExponentialSmoothingHoltWinters.js" />
+	<help file="ExponentialSmoothingHoltWinters.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<connect governor="ts_data.available" client="ts_vs.root" />
+	</logic>
+	<dialog label="Exponential Smoothing (Holt-Winters)">
+		<row id="row_vDSDSDFTVF">
+			<varselector id="ts_vs" />
+			<column id="clm_tDSDSDFTVF">
+				<tabbook>
+					<tab label="Data &amp; Structure" id="tab_DtStrctr">
+						<column id="clm_vDFTVFNTSS">
+							<varslot id="ts_data" label="Data Frame" source="ts_vs" classes="data.frame" required="true" />
+							<varslot id="ts_target" label="Target Variable to Forecast (Numeric)" source="ts_vs" classes="numeric integer" required="true" />
+							<frame label="Time Series Structure" id="frm_structure">
+								<dropdown id="ts_freq" label="Data Frequency (Seasonality)">
+									<option label="Monthly (12)" value="12" checked="true" />
+									<option label="Quarterly (4)" value="4" />
+									<option label="Yearly (1)" value="1" />
+									<option label="Weekly (52)" value="52" />
+								</dropdown>
+								<row id="row_sSY2018202">
+									<spinbox label="Start Year (e.g., 2018)" id="ts_start_yr" initial="2020" min="1900" max="2100" type="integer" />
+									<spinbox label="Start Period (e.g., 1 for Jan/Q1)" id="ts_start_pd" initial="1" min="1" max="52" type="integer" />
+								</row>
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Model Selection" id="tab_MdlSlctn">
+						<column id="clm_fMHSMAETSS">
+							<frame label="Model &amp; Horizon" id="frm_model">
+								<radio id="ts_model" label="Smoothing Method">
+									<option label="Auto-detect best model (ETS)" value="auto" checked="true" />
+									<option label="Simple Exponential Smoothing (No Trend, No Seasonality)" value="ANN" />
+									<option label="Holt's Linear Trend (Trend, No Seasonality)" value="AAN" />
+									<option label="Holt-Winters Additive (Trend &amp; Seasonality)" value="AAA" />
+									<option label="Holt-Winters Multiplicative (Trend &amp; Seasonality)" value="MAM" />
+								</radio>
+								<spinbox label="Periods to forecast (h)" id="ts_horizon" initial="12" min="1" max="120" type="integer" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Plot Options" id="tab_PltOptns">
+						<column id="clm_fPCPT2MCCS">
+							<frame label="Plot Customization" id="frm_plot">
+								<dropdown id="ts_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+								<input label="Main Title (Leave empty for default)" id="plot_main" />
+								<input label="X-Axis Label (e.g., Time or Years)" id="plot_xlab" />
+								<input label="Y-Axis Label" id="plot_ylab" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Output" id="tab_Output">
+						<column id="clm_fSFWSFWSHT">
+							<frame label="Save Forecast to Workspace" id="frm_SvFrcstW">
+								<saveobject label="Save forecast object as" checkable="true" initial="my_forecast" id="ts_save" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_graph_size">
+								<row id="row_sHTMLPW800">
+									<spinbox label="HTML Plot Width (pixels)" id="plot_w" initial="800" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="plot_h" initial="600" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_save_plot">
+								<saveobject label="Save Plot as R Object (Workspace)" checkable="true" initial="my_plot" id="plot_save" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+				<preview label="Preview Forecast Plot" id="prv_PrvwFrcP" />
+			</column>
+		</row>
+	</dialog>
+</document>

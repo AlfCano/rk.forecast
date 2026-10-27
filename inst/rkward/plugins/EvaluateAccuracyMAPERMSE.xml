@@ -1,0 +1,71 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="EvaluateAccuracyMAPERMSE.js" />
+	<help file="EvaluateAccuracyMAPERMSE.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<!--
+			<convert id="!edit!" sources="!edit!" mode="equals" standard="!edit!" />
+		-->
+		<!--
+			<connect governor="!edit!.state" client="!edit!.enabled" />
+		-->
+	</logic>
+	<dialog label="Evaluate Accuracy (MAPE, RMSE)">
+		<row id="row_vMTMTMEMES">
+			<varselector id="eval_vs" />
+			<column id="clm_tMTMTMEMES">
+				<tabbook>
+					<tab label="Model &amp; Theme" id="tab_ModelThm">
+						<column id="clm_fMEMESFOWV">
+							<frame label="Model to Evaluate" id="frm_MdltEvlt">
+								<varslot id="eval_model" label="Select a Forecast Object from Workspace" source="eval_vs" classes="forecast" required="true" />
+							</frame>
+							<frame label="Visualization Settings" id="frm_VslztnSt">
+								<dropdown id="eval_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Plot Options" id="tab_PltOptns">
+						<column id="clm_fPCMTLXALL">
+							<frame label="Plot Customization" id="frm_eval_plot">
+								<input label="Main Title (Leave empty for default)" id="eval_plot_main" />
+								<input label="X-Axis Label (Leave empty for default)" id="eval_plot_xlab" />
+								<input label="Y-Axis Label (Leave empty for default)" id="eval_plot_ylab" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Output" id="tab_Output">
+						<column id="clm_fHTMLGSRHT">
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_eval_graph_size">
+								<row id="row_sHTMLPW800">
+									<spinbox label="HTML Plot Width (pixels)" id="eval_plot_w" initial="800" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="eval_plot_h" initial="600" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="eval_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_eval_save_plot">
+								<saveobject label="Save ggplot Object as" checkable="true" initial="eval_plot" id="eval_plot_save" />
+							</frame>
+							<preview label="Preview Evaluation Plot" id="prv_PrvwEvlP" />
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+			</column>
+		</row>
+	</dialog>
+</document>

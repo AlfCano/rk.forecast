@@ -1,0 +1,120 @@
+<!DOCTYPE
+	rkpluginmap
+>
+<document
+	base_prefix=""
+	namespace="ExponentialSmoothingHoltWinters"
+	id="ExponentialSmoothingHoltWinters_rkward"
+	po_id="ExponentialSmoothingHoltWinters_rkward"
+	priority="medium"
+>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<dependencies
+		R_min_version="4.0.0"
+	>
+		<package
+			name="forecast"
+		/>
+	</dependencies>
+	<about
+		name="rk.forecast"
+		shortinfo="Business Forecasting: Exponential Smoothing, Holt-Winters, and Accuracy Metrics"
+		longinfo="Business Forecasting: Exponential Smoothing, Holt-Winters, and Accuracy Metrics"
+		version="0.0.1"
+		releasedate="2026-10-27"
+		url="https://github.com/AlfCano/rk.forecast"
+		license="GPL (&gt;= 3)"
+	>
+		<author
+			given="Alfonso"
+			family="Cano"
+			email="alfonso.cano@correo.buap.mx"
+			role="aut, cre"
+		/>
+	</about>
+	<require
+		map="rkward::menu"
+	/>
+	<require
+		map="rkward::embedded"
+	/>
+	<components>
+		<component
+			id="cmp_ExpnntlSmthngHltWntrsBMNM"
+			label="Baseline Models (Naive &amp; Mean)"
+			type="standard"
+			file="plugins/BaselineModelsNaiveMean.xml"
+		>
+		</component>
+		<component
+			id="cmp_ExpnntlSmthngHWEAMAPERMSE"
+			label="Evaluate Accuracy (MAPE, RMSE)"
+			type="standard"
+			file="plugins/EvaluateAccuracyMAPERMSE.xml"
+		>
+		</component>
+		<component
+			id="cmp_ExpnntlSmthngHltWntrsESHW"
+			label="Exponential Smoothing (Holt-Winters)"
+			type="standard"
+			file="plugins/ExponentialSmoothingHoltWinters.xml"
+		>
+		</component>
+	</components>
+	<hierarchy>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="TimeSeries"
+				label="Time Series"
+			>
+				<entry
+					component="cmp_ExpnntlSmthngHltWntrsBMNM"
+				/>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="TimeSeries"
+				label="Time Series"
+			>
+				<entry
+					component="cmp_ExpnntlSmthngHWEAMAPERMSE"
+				/>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="TimeSeries"
+				label="Time Series"
+			>
+				<entry
+					component="cmp_ExpnntlSmthngHltWntrsESHW"
+				/>
+			</menu>
+		</menu>
+	</hierarchy>
+	<!--
+		<context
+			id="x11"
+		>
+		</context>
+	-->
+	<!--
+		<context
+			id="import"
+		>
+		</context>
+	-->
+</document>

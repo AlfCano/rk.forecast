@@ -1,0 +1,91 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="BaselineModelsNaiveMean.js" />
+	<help file="BaselineModelsNaiveMean.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<connect governor="naive_data.available" client="naive_vs.root" />
+	</logic>
+	<dialog label="Baseline Models (Naive &amp; Mean)">
+		<row id="row_vDSDSDFTVF">
+			<varselector id="naive_vs" />
+			<column id="clm_tDSDSDFTVF">
+				<tabbook>
+					<tab label="Data &amp; Structure" id="tab_DtStrctr">
+						<column id="clm_vDFTVFNTSS">
+							<varslot id="naive_data" label="Data Frame" source="naive_vs" classes="data.frame" required="true" />
+							<varslot id="naive_target" label="Target Variable to Forecast (Numeric)" source="naive_vs" classes="numeric integer" required="true" />
+							<frame label="Time Series Structure" id="frm_TmSrsStr">
+								<dropdown id="naive_freq" label="Data Frequency">
+									<option label="Monthly (12)" value="12" checked="true" />
+									<option label="Quarterly (4)" value="4" />
+									<option label="Yearly (1)" value="1" />
+								</dropdown>
+								<row id="row_sSY2020190">
+									<spinbox label="Start Year" id="naive_start_yr" initial="2020" min="1900" max="2100" type="integer" />
+									<spinbox label="Start Period" id="naive_start_pd" initial="1" min="1" max="12" type="integer" />
+								</row>
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Model Configuration" id="tab_MdlCnfgr">
+						<column id="clm_fMCMCBMNLS">
+							<frame label="Model Configuration" id="frm_MdlCnfgr">
+								<radio id="naive_method" label="Baseline Method">
+									<option label="Naive (Last observation carries forward)" value="naive" checked="true" />
+									<option label="Seasonal Naive (Last season carries forward)" value="snaive" />
+									<option label="Mean Forecast (Average of all history)" value="meanf" />
+									<option label="Random Walk with Drift (Trend based on first/last)" value="rwf" />
+								</radio>
+								<spinbox label="Periods to forecast (h)" id="naive_h" initial="12" min="1" max="120" type="integer" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Plot Options" id="tab_PltOptns">
+						<column id="clm_fPCPT2MCCS">
+							<frame label="Plot Customization" id="frm_naive_plot">
+								<dropdown id="naive_theme" label="Plot Theme (ggplot2)">
+									<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+									<option label="Classic (Scientific)" value="classic" />
+									<option label="Black &amp; White (Grid)" value="bw" />
+								</dropdown>
+								<input label="Main Title (Leave empty for default)" id="naive_plot_main" />
+								<input label="X-Axis Label (e.g., Time or Years)" id="naive_plot_xlab" />
+								<input label="Y-Axis Label" id="naive_plot_ylab" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="Output" id="tab_Output">
+						<column id="clm_fSFWSFWSHT">
+							<frame label="Save Forecast to Workspace" id="frm_SvFrcstW">
+								<saveobject label="Save forecast object as" checkable="true" initial="naive_forecast" id="naive_save" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_naive_graph_size">
+								<row id="row_sHTMLPW800">
+									<spinbox label="HTML Plot Width (pixels)" id="naive_plot_w" initial="800" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="naive_plot_h" initial="600" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="naive_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_naive_save_plot">
+								<saveobject label="Save Plot as R Object (Workspace)" checkable="true" initial="naive_plot" id="naive_plot_save" />
+							</frame>
+							<preview label="Preview Forecast Plot" id="prv_PrvwFrcP" />
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+			</column>
+		</row>
+	</dialog>
+</document>

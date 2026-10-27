@@ -1,0 +1,71 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_DtStrctr" />
+		<setting id="naive_data">
+		</setting>
+		<setting id="naive_target">
+		</setting>
+		<caption id="frm_TmSrsStr" />
+		<setting id="naive_freq">
+		</setting>
+		<setting id="naive_start_yr">
+		</setting>
+		<setting id="naive_start_pd">
+		</setting>
+		<caption id="tab_MdlCnfgr" />
+		<caption id="frm_MdlCnfgr" />
+		<setting id="naive_method">
+		</setting>
+		<setting id="naive_h">
+		</setting>
+		<caption id="tab_PltOptns" />
+		<caption id="frm_naive_plot" />
+		<setting id="naive_theme">
+		</setting>
+		<setting id="naive_plot_main">
+		</setting>
+		<setting id="naive_plot_xlab">
+		</setting>
+		<setting id="naive_plot_ylab">
+		</setting>
+		<caption id="tab_Output" />
+		<caption id="frm_SvFrcstW" />
+		<setting id="naive_save">
+		</setting>
+		<caption id="frm_naive_graph_size" />
+		<setting id="naive_plot_w">
+		</setting>
+		<setting id="naive_plot_h">
+		</setting>
+		<setting id="naive_plot_res">
+		</setting>
+		<caption id="frm_naive_save_plot" />
+		<setting id="naive_plot_save">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>
